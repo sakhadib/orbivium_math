@@ -1,0 +1,32 @@
+
+.door_box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.closed_door{
+    width: 70%;
+    cursor: pointer;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.closed_door:hover{
+    background-color: #f0f0f0;
+}
+
+
+.stat-box{
+    border: 1px solid #f0f0f0;
+    padding: 15px;
+}
+
+
+.result-box{
+    border: 1px solid #f0f0f0;
+    padding: 15px;
+    margin-top: 20px;
+}

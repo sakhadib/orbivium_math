@@ -1,0 +1,139 @@
+/* Container Heights */
+
+.vh-100{
+    min-height: 100vh;
+}
+
+.vh-95{
+    min-height: 95vh;
+}
+
+.vh-90{
+    min-height: 90vh;
+}
+
+.vh-80{
+    min-height: 80vh;
+}
+
+.vh-70{
+    min-height: 70vh;
+}
+
+.vh-60{
+    min-height: 60vh;
+}
+
+.vh-50{
+    min-height: 50vh;
+}
+
+.vh-40{
+    min-height: 40vh;
+}
+
+.vh-30{
+    min-height: 30vh;
+}
+
+.vh-20{
+    min-height: 20vh;
+}
+
+.vh-10{
+    min-height: 10vh;
+}
+
+.vh-5{
+    min-height: 5vh;
+}
+
+
+/* Shadow */
+.bs{
+    box-shadow: 0 0 0.5rem rgba(0,0,0,0.1);
+}
+
+.bs-lg{
+    box-shadow: 0 0 0.5rem rgba(0,0,0,0.3);
+}
+
+.bs-xl{
+    box-shadow: 0 0 0.5rem rgba(0,0,0,0.5);
+}
+
+.bs-none{
+    box-shadow: none;
+}
+
+/* Border Radius */
+
+.br-0{
+    border-radius: 0;
+}
+
+.br-1{
+    border-radius: 0.125rem;
+}
+
+.br-2{
+    border-radius: 0.25rem;
+}
+
+
+/* Flex */
+.df{
+    display: flex;
+}
+
+.dfc{
+    display: flex;
+    flex-direction: column;
+}
+
+.jcc{
+    justify-content: center;
+}
+
+.jcsb{
+    justify-content: space-between;
+}
+
+.jcsa{
+    justify-content: space-around;
+}
+
+.jcfs{
+    justify-content: flex-start;
+}
+
+.jcfe{
+    justify-content: flex-end;
+}
+
+.aic{
+    align-items: center;
+}
+
+.aifs{
+    align-items: flex-start;
+}
+
+.aife{
+    align-items: flex-end;
+}
+
+.aib{
+    align-items: baseline;
+}
+
+.aist{
+    align-items: stretch;
+}
+
+.w-100{
+    width: 100%;
+}
+
+
+
