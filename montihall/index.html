@@ -30,10 +30,10 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link" href="../"><i class="uil uil-estate"></i> Main Page</a>
+                    <a class="nav-link" href="../"><i class="uil uil-estate"></i> Orbivium Math</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="uil uil-github"></i> Github</a>
+                    <a class="nav-link" href="https://github.com/sakhadib/orbivium_math/tree/main/montihall"><i class="uil uil-github"></i> Monti Hall Github</a>
                   </li>
                   
                 </ul>
@@ -218,8 +218,56 @@
 
 
      <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mt-5 df jcc dfc aic">
+                    <img class="logo_img" src="../common_rsx/orb.svg" alt="">
+                    <p class="fs-3">Mission to Build Scientific Bangladesh</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-5 df jcc dfc aic">
+                    <p class="lead">Developed with ❤️ by <a class="link-dark" href="https://sakhawatadib.com" target="_blank">Sakhawat Adib</a></p>
+                </div>
+            </div>
+        </div>
 
      </footer>
+
+
+
+
+     <script>
+        // Live Clock
+        function liveClock() {
+            let date = new Date();
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+            let session = "AM";
+
+            if (hours == 0) {
+                hours = 12;
+            }
+
+            if (hours > 12) {
+                hours = hours - 12;
+                session = "PM";
+            }
+
+            hours = (hours < 10) ? "0" + hours : hours;
+            minutes = (minutes < 10) ? "0" + minutes : minutes;
+            seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+            let time = hours + ":" + minutes + ":" + seconds + " " + session;
+            document.getElementById("clock").innerText = time;
+            document.getElementById("clock").textContent = time;
+
+            setTimeout(liveClock, 1000);
+        }
+
+        liveClock();
+     </script>
     
 </body>
 </html>
