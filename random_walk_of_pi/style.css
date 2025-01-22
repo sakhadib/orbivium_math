@@ -1,0 +1,102 @@
+/* Ensure responsiveness for the canvas */
+#piCanvas {
+    max-width: 80%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border: 1px solid #ccc;
+    background: #ffffff;
+    width: 100%;
+    height: auto;
+}
+
+/* Adjusting spacing for small screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+    #inputDigits {
+        font-size: 0.9rem;
+    }
+
+    #startButton {
+        font-size: 0.9rem;
+    }
+}
+
+/* Custom footer styles */
+footer {
+    font-size: 0.9rem;
+}
+
+
+.button-container {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.button-container button {
+    margin: 5px;
+}
+
+
+.page{
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sh-input:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #000000;
+}
+
+.controls{
+    margin-top: -60px
+}
+
+
+.modal-content {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    background-color: #c4c4c4;
+    color: #333333;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.modal-body {
+    /* font-family: 'Arial', sans-serif; */
+    color: #495057;
+    line-height: 1.6;
+}
+
+.color-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 3px;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+}
+
+ul.list-unstyled {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+ul.list-unstyled li {
+    margin-bottom: 10px;
+}
