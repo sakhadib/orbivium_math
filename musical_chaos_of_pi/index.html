@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music from Pi</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../util.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+              <a class="navbar-brand" href="#">Musical Chaos of Pi</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../"><i class="uil uil-estate"></i> Orbivium Math</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/sakhadib/orbivium_math/tree/main/musical_chaos_of_pi"><i class="uil uil-github"></i> Musical Chaos of Pi GitHub</a>
+                  </li>
+                  
+                </ul>
+                
+              </div>
+            </div>
+          </nav>
+     </header>
+
+
+
+     <!-- main -->
+    <main>
+        <div class="container vh-95 df dfc jcc">
+            <div class="row">
+                <div class="col-md-4">
+                    <h1>Music from Pi</h1>
+                    <p class="lead">Play music based on the digits of Pi</p>
+                    <hr>
+
+                    <div class="container-fluid mt-5">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <input type="number" id="tempo" class="form-control form-control-lg" placeholder="Enter Tempo (e.g., 120)" min="30" max="300">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="number" id="digits" class="form-control form-control-lg" placeholder="Enter number of digits (e.g., 50)" min="1">
+                                </div>
+                                <button id="play-btn" class="btn btn-outline-dark btn-lg w-100">Play Music</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 offset-md-2">
+                    <div class="container df dfc jcc">
+                        <div class="row">
+                            <div class="col-md-8  df dfc aic jcc">
+                                <h1 class="pi-digit text-center" id="current_digit"></h1>
+                            </div>
+                            <div class="col-md-4  df dfc aic jcc">
+                                <h1 class="music-note text-center" id="current_music_note"></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mt-5 df jcc dfc aic">
+                    <img class="logo_img" src="../common_rsx/orb.svg" alt="">
+                    <p class="fs-3">Mission to Build Scientific Bangladesh</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-5 df jcc dfc aic">
+                    <p class="lead">Developed with ❤️ by <a class="link-dark" href="https://sakhawatadib.com" target="_blank">Sakhawat Adib</a></p>
+                </div>
+            </div>
+        </div>
+
+     </footer>
+
+
+  
+</body>
+</html>
