@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Warp Grid</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../util.css">
+
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+              <a class="navbar-brand" href="#">Time Warp Grid</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../"><i class="uil uil-estate"></i> Orbivium Math</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/sakhadib/orbivium_math/tree/main/warpgrid"><i class="uil uil-github"></i> Time Warp Github</a>
+                  </li>
+                  
+                </ul>
+                
+              </div>
+            </div>
+          </nav>
+     </header>
+
+
+
+    <!-- Main Container -->
+    <div class="container-fluid">
+        <div class="row vh-90">
+            <!-- Control Panel -->
+            <div class="col-md-3 offset-md-1 p-3 df dfc jcc">
+                <h3 class="text-center display-6">Control Panel</h3>
+                <hr>
+                <div class="mb-3">
+                    <label for="functionSelect" class="form-label">Select Function</label>
+                    <select id="functionSelect" class="form-select">
+                        <option value="sin">Sine Wave (sin(x + y))</option>
+                        <option value="log">Logarithm (log(x^2 + y^2))</option>
+                        <option value="exp">Exponential (e^(x-y))</option>
+                        <option value="custom">Custom Function</option>
+                    </select>
+                </div>
+                <div id="customFunctionInput" class="mb-3 d-none">
+                    <label for="customFunction" class="form-label">Custom Function</label>
+                    <input type="text" id="customFunction" class="form-control" placeholder="Enter function (e.g., sin(x*y))">
+                </div>
+                <div class="mb-3">
+                    <label for="speedControl" class="form-label">Speed Multiplier</label>
+                    <input type="range" id="speedControl" class="form-range" min="1" max="10" step="1" value="5">
+                </div>
+                <div class="mb-3">
+                    <label for="gridSize" class="form-label">Grid Size</label>
+                    <input type="number" id="gridSize" class="form-control" value="10" min="5" max="50">
+                </div>
+                <button id="applySettings" class="btn btn-primary w-100">Apply Settings</button>
+
+                <p class="lead mt-3">
+                    To know more about the Time Warp Grid <a href="" class="link-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Click Here</a>.
+                </p>
+            </div>
+
+            <!-- Grid Canvas -->
+            <div class="col-md-6 offset-md-1 p-0 mt-5 mb-5">
+                <canvas id="gridCanvas" class="w-100 h-100 canvas-gd"></canvas>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12 mt-5 df jcc dfc aic">
+                  <img class="logo_img" src="../common_rsx/orb.svg" alt="">
+                  <p class="fs-3">Mission to Build Scientific Bangladesh</p>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-12 mb-5 df jcc dfc aic">
+                  <p class="lead">Developed with ❤️ by <a class="link-dark" href="https://sakhawatadib.com" target="_blank">Sakhawat Adib</a></p>
+              </div>
+          </div>
+      </div>
+
+   </footer>
+
+
+
+         <!-- Modal -->
+<!-- Modal for Documentation -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">What and How !?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+        <div class="container">  
+          <p class="lead mb-4">
+              The Time Warp Visualization is an interactive grid where each grid point represents a "clock" that rotates based on a mathematical function. This creates a dynamic, mesmerizing visual effect that reflects mathematical concepts like oscillations and transformations.
+          </p>
+  
+          <h2 class="display-5">Mathematical Basis</h2>
+          <hr>
+          <p class="lead mb-4">
+              The core of the Time Warp Visualization relies on mathematical functions that take coordinates of grid points (<code>x, y</code>) as inputs and produce an angle of rotation for each clock.
+          </p>
+  
+          <h3 class="display-6">Equations</h3>
+          <hr>
+          <div class="equation mb-4">
+              \( \text{Angle} = f(x, y) \times \text{Speed Multiplier} \)
+          </div>
+          <ul class="mb-4">
+              <li class="lead mb-3"><strong>Sine Wave:</strong> \( f(x, y) = \sin(x + y) \)</li>
+              <li class="lead mb-3"><strong>Logarithm:</strong> \( f(x, y) = \log(x^2 + y^2 + 1) \)</li>
+              <li class="lead mb-3"><strong>Exponential:</strong> \( f(x, y) = e^{(x - y)} \)</li>
+              <li class="lead mb-3"><strong>Custom Function:</strong> Any user-defined function using <code>x</code> and <code>y</code>.</li>
+          </ul>
+  
+          <h3 class="display-6">Example: Sine Wave</h3>
+          <hr>
+          <div class="example mb-4 lead">
+              Suppose the grid point is at \((x, y) = (1, 2)\) and the speed multiplier is 5.
+              <br>
+              The angle is calculated as:
+              <br>
+              \[ \text{Angle} = \sin(1 + 2) \times 5 = \sin(3) \times 5 \approx 0.1411 \times 5 = 0.7055 \text{ radians} \]
+          </div>
+  
+          <h2 class="display-5">Grid and Animation</h2>
+          <hr>
+          <p class="lead mb-4">
+              The grid consists of a defined number of rows and columns. Each point on the grid is represented as a clock. For smaller grid sizes, clocks are drawn with circular shapes. For larger grid sizes (e.g., >30), only the hand directions are displayed for performance optimization.
+          </p>
+  
+          <h3 class="display-6">Animation</h3>
+          <hr>
+          <p class="lead mb-4">
+              Over time, each clock continuously rotates based on the calculated angle and the passage of time. This creates a smooth animation where the entire grid appears to "warp" dynamically.
+          </p>
+  
+          <h3 class="display-6">Equation for Continuous Rotation</h3>
+          <hr>
+          <div class="equation mb-4">
+              \( \text{Animated Angle} = \text{Base Angle} + \text{Time} \)
+          </div>
+  
+          <h2 class="display-5">Example</h2>
+          <hr>
+          <div class="example mb-4 lead">
+              <strong>Grid Size:</strong> \(10 \times 10\)<br><br>
+              <strong>Function:</strong> \( \sin(x + y) \)<br><br>
+              <strong>Speed Multiplier:</strong> \(3\)<br><br><br><br>
+  
+              For a grid point \((x, y) = (2, -1)\): <br><br>
+              <ul>
+                  <li class="mb-3">\( \text{Base Angle} = \sin(2 + (-1)) \times 3 = \sin(1) \times 3 \approx 0.841 \times 3 = 2.523 \text{ radians} \)</li>
+                  <li class="mb-3">\( \text{Animated Angle} = \text{Base Angle} + \text{Time} \)</li>
+              </ul>
+          </div>
+  
+          <h2 class="display-5">Customization Options</h2>
+          <hr>
+          <p class="lead mb-4">
+              Users can interact with the visualization by changing:
+          </p>
+          <ul class="mb-4">
+              <li class="lead mb-3"><strong>Grid Size:</strong> Number of rows and columns.</li>
+              <li class="lead mb-3"><strong>Function:</strong> Predefined or custom mathematical functions.</li>
+              <li class="lead mb-3"><strong>Speed Multiplier:</strong> Controls the rotation speed.</li>
+          </ul>
+  
+          <h2 class="display-5">Practical Applications</h2>
+          <hr>
+          <p class="lead mb-4">
+              This visualization has applications in:
+          </p>
+          <ul class="mb-4 lead">
+              <li class="mb-3"><strong>Mathematics Education:</strong> Demonstrating waveforms, logarithmic growth, and other mathematical phenomena.</li>
+              <li class="mb-3"><strong>Data Visualization:</strong> Showing spatial transformations and oscillations.</li>
+              <li class="mb-3"><strong>Art and Design:</strong> Creating interactive and generative art.</li>
+          </ul>
+      </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+.canvas-gd{
+    border : 1px solid #888888;
+    border-radius: 15px;
+}
+
+.equation {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-family: 'Courier New', Courier, monospace;
+}
+.example {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 5px solid #007bff;
+}
