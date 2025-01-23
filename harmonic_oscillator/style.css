@@ -1,0 +1,41 @@
+body {
+    /* font-family: Arial, sans-serif; */
+  }
+  .canvas-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    margin: 20px 0;
+    background: #fff;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  canvas {
+    border: 1px solid #ced4da;
+  }
+
+  .slider-container {
+    margin: 15px 0;
+  }
+
+  .slider-container label {
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+
+  .controls {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .slider {
+    width: 100%;
+  }

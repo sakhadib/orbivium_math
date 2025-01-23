@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harmonic Oscillator Visualizer</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Your CSS file will go here -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../util.css">
+
+    <!-- Unicon Iconscout -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+              <a class="navbar-brand" href="#">Harmonic Oscillator</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../"><i class="uil uil-estate"></i> Orbivium Math</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/sakhadib/orbivium_math/tree/main/harmonic_oscillator"><i class="uil uil-github"></i> Oscillator Github</a>
+                  </li>
+                  
+                </ul>
+                
+              </div>
+            </div>
+          </nav>
+     </header>
+
+
+    <div class="container mt-4 mb-5">
+        <!-- Canvas Area -->
+        <div class="canvas-container">
+          <canvas id="oscillatorCanvas" width="600" height="400"></canvas>
+          <p class="lead mt-4">
+            To know more about the harmonic oscillator <a href="" class="link-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Click Here</a>.
+          </p>
+        </div>
+      
+        <!-- Controls -->
+        <div class="controls">
+          <div class="row">
+            <!-- Mass Control -->
+            <div class="col-md-4 slider-container">
+              <label for="massSlider" class="form-label">Mass</label>
+              <input type="range" id="massSlider" class="slider" min="1" max="10" step="0.1" value="5">
+              <div id="massValue" class="text-muted">Mass: 5 kg</div>
+            </div>
+      
+            <!-- Spring Constant Control -->
+            <div class="col-md-4 slider-container">
+              <label for="springSlider" class="form-label">Spring Constant</label>
+              <input type="range" id="springSlider" class="slider" min="1" max="100" step="1" value="50">
+              <div id="springValue" class="text-muted">Spring Constant: 50 N/m</div>
+            </div>
+      
+            <!-- Damping Control -->
+            <div class="col-md-4 slider-container">
+              <label for="dampingSlider" class="form-label">Damping Factor</label>
+              <input type="range" id="dampingSlider" class="slider" min="0" max="1" step="0.01" value="0.1">
+              <div id="dampingValue" class="text-muted">Damping: 0.1</div>
+            </div>
+          </div>
+      
+          <div class="row mt-3">
+            <!-- Frequency Control -->
+            <div class="col-md-4 slider-container">
+              <label for="frequencySlider" class="form-label">Frequency</label>
+              <input type="range" id="frequencySlider" class="slider" min="0.5" max="5" step="0.1" value="1">
+              <div id="frequencyValue" class="text-muted">Frequency: 1 Hz</div>
+            </div>
+      
+            <!-- Amplitude Control -->
+            <div class="col-md-4 slider-container">
+              <label for="amplitudeSlider" class="form-label">Amplitude</label>
+              <input type="range" id="amplitudeSlider" class="slider" min="10" max="200" step="10" value="100">
+              <div id="amplitudeValue" class="text-muted">Amplitude: 100 px</div>
+            </div>
+      
+            <!-- Play/Pause Button -->
+            <div class="col-md-4 text-center">
+                <div class="container-fluid">
+                    <div class="row mt-3">
+                        <div class="col-4">
+                            <button id="playPauseButton" class="btn btn-outline-dark mt-3 w-100"><i class="uil uil-play"></i> Play</button>
+                        </div>
+                        <div class="col-4">
+                            <button id="soundToggleButton" class="btn btn-outline-dark mt-3 w-100"><i class="uil uil-volume"></i> ON</button>
+                        </div>
+                        <div class="col-4">
+                            <button id="resetButton" class="btn btn-danger mt-3 w-100"><i class="uil uil-redo"></i> Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mt-5 df jcc dfc aic">
+                    <img class="logo_img" src="../common_rsx/orb.svg" alt="">
+                    <p class="fs-3">Mission to Build Scientific Bangladesh</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-5 df jcc dfc aic">
+                    <p class="lead">Developed with ❤️ by <a class="link-dark" href="https://sakhawatadib.com" target="_blank">Sakhawat Adib</a></p>
+                </div>
+            </div>
+        </div>
+
+     </footer>
+
+
+
+
+     <!-- Modal -->
+<!-- Modal for Documentation -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">What and How !?</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h3>Using the Harmonic Oscillator Visualizer</h3>
+          <p>This tool simulates a damped harmonic oscillator. Use the sliders to modify the parameters, and observe how they affect the motion and sound.</p>
+  
+          <h3>Mass Slider (\(m\))</h3>
+          <p>Controls the mass of the object attached to the spring. Increasing the mass reduces the frequency of oscillation, as heavier systems oscillate slower.</p>
+          <p>Equation:</p>
+          <p>
+            \[
+            f = \frac{1}{2\pi} \sqrt{\frac{k}{m}}
+            \]
+          </p>
+          <p><strong>Example:</strong> If the spring constant \(k = 50 \, \text{N/m}\) and the mass \(m = 5 \, \text{kg}\):</p>
+          <p>
+            \[
+            f = \frac{1}{2\pi} \sqrt{\frac{50}{5}} \approx 1.59 \, \text{Hz}
+            \]
+          </p>
+          <p><strong>What to Expect:</strong> When mass increases to \(10 \, \text{kg}\), the frequency decreases to approximately 1.12 Hz. The oscillator moves slower, and the sound pitch lowers.</p>
+  
+          <h3>Spring Constant Slider (\(k\))</h3>
+          <p>Controls the stiffness of the spring. A stiffer spring oscillates faster due to stronger restoring forces.</p>
+          <p>Equation:</p>
+          <p>
+            \[
+            f = \frac{1}{2\pi} \sqrt{\frac{k}{m}}
+            \]
+          </p>
+          <p><strong>Example:</strong> With \(m = 5 \, \text{kg}\), increasing \(k\) from 50 to 100 N/m raises the frequency from 1.59 Hz to 2.25 Hz.</p>
+          <p><strong>What to Expect:</strong> Increasing \(k\) makes oscillations faster, and the sound pitch increases.</p>
+  
+          <h3>Damping Slider (\(b\))</h3>
+          <p>Damping controls how quickly the oscillations fade. Higher damping reduces motion amplitude over time.</p>
+          <p>Equation:</p>
+          <p>
+            \[
+            x(t) = A e^{-\frac{b}{2m}t} \cos(\omega t)
+            \]
+          </p>
+          <p><strong>What to Expect:</strong> At \(b = 0.1\), oscillations fade slowly. At \(b = 1.0\), oscillations stop almost immediately.</p>
+  
+          <h3>Frequency Slider (\(f\))</h3>
+          <p>Directly sets the oscillation frequency. Higher values produce faster motion.</p>
+          <p><strong>What to Expect:</strong> Increasing \(f\) results in faster oscillations and a higher sound pitch.</p>
+  
+          <h3>Amplitude Slider (\(A\))</h3>
+          <p>Amplitude controls the maximum displacement. Increasing amplitude makes the motion more pronounced.</p>
+          <p>Equation:</p>
+          <p>
+            \[
+            x(t) = A \cos(\omega t)
+            \]
+          </p>
+          <p><strong>What to Expect:</strong> Increasing \(A\) makes the motion visually larger, but the frequency and pitch remain unchanged.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+</body>
+</html>
